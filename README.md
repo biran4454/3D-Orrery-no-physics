@@ -9,7 +9,7 @@ A 3D orrery built on Processing 3 using the PeasyCam library. Done without physi
 4. Click install.
 5. Close the window to return to processing.
 ### 2. Launching the project
-6. Open any of the `\*.pde` files.
+6. Open any of the `*.pde` files.
 7. In Processing, there should be an arrow in a circle like this: (>).
 8. Click it to launch the project.
 ### 3. Using the project
@@ -26,4 +26,16 @@ Right-click / mouse wheel / up + down keys: zoom
 
 'O': turn orbit trails on / off
 'L': turn lables on / off
+'Q': decrease time speed
+'E': increase time speed
+(space key): pause / unpause the simulation
+
+### 4. Customise with user-set variables!
+This is only recommended if you want to customise the simulation a little bit.
+It doesn't require any coding skills.
+Variables are in `Planets_v11_1.pde`
+##### If you do know coding:
+The user-set variables are just below the first multiline comment.
+They are fairly well documented.
+Feel free to create a pull request if you want to add one, or edit the comments.
 (Tutorial WIP... more to come!)
