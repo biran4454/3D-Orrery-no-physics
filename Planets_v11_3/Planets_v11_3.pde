@@ -1,7 +1,6 @@
 /*
 * Created by Biran4454
-* https://github.com/biran4454/3D-Orrery-no-physics
-* 2019 - 2020
+* 2019
 */
 /*
 Notes:
@@ -20,14 +19,14 @@ Notes:
         Offset the planet's start position.
 */
 /*
-HOW TO GET INCREMENTS OF TIME SPEED (Just me working out some maths):
-	1. Get start speed - actual speed
-	2. actual speed = start speed * 2^(number of multiplications)
-	3. actual speed / start speed = 2^(number of multiplications)
-	4. log(actual speed / start speed) = number of multiplications * log(2)
-	5. log(actual speed / start speed) / log(2) = number of multiplications
+HOW TO GET INCREMENTS OF TIME SPEED:
+1. Get start speed - actual speed
+2. actual speed = start speed * 2^(number of multiplications)
+3. actual speed / start speed = 2^(number of multiplications)
+4. log(actual speed / start speed) = number of multiplications * log(2)
+5. log(actual speed / start speed) / log(2) = number of multiplications
 */
-import peasy.*; //REQUIRES PEASYCAM LIBRARY. USE MENU "Sketch>Import Library>Add library>PeasyCam>Install" TO ADD.
+import peasy.*;
 
 //////////////////////////////////////////////////////  VARIABLES  /////////////////////////////////////////////////////////////////
 
@@ -83,6 +82,7 @@ void checkKeys(){
         case '4': planetFocus = 4; break;
         case '5': planetFocus = 5; break;
         case '6': planetFocus = 6; break;
+        case '7': planetFocus = 7; break;
         
         case 'q': if(timeSpeed > 0.0005){
                     timeSpeed /= 2;
@@ -147,6 +147,9 @@ void focusPlanet(){
    case 6: xFocus = jupiter.getPosition(t)[0]; yFocus = jupiter.getPosition(t)[1]; zFocus = 0;
      focusName = "Jupiter";
      break;
+   case 7: xFocus = saturn.getPosition(t)[0]; yFocus = saturn.getPosition(t)[1]; zFocus = 0;
+     focusName = "Saturn";
+     break;
  }
  cam2.lookAt(xFocus, yFocus, zFocus, cam2.getDistance(), 0);
 }
@@ -182,13 +185,14 @@ Planet earth = new Planet(1500, 0, 0, 0.637, 1, "Earth", 't');
 Moon earthMoon = new Moon(earth, 38.44, 0.0, 0.0, 0.1737, 12, "Moon");
 Planet mars = new Planet(2286, 0.0934, 0, 0.3390, 0.8082, "Mars", 't');
 Planet jupiter = new Planet(7785, 0, 0, 6.6854, 0.44, "Jupiter", 'g');
+Planet saturn = new Planet(14335, 0, 0, 5.8232, 0.325, "Saturn", 'g');
 
 //////////////////////////////////////////////////////////  SETUP  /////////////////////////////////////////////////////////////////////////
 
 PeasyCam cam2;
 void setup(){
   println("Starting...");
-  size(1000, 1000, P3D); //1000, 1000   or   1925, 1120
+  size(700, 700, P3D); //1000, 1000   or   1925, 1120
   background(200);
   notifications = new ArrayList<String>();
   notificationTimes = new ArrayList<Integer>();

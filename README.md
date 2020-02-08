@@ -33,7 +33,7 @@ Right-click / mouse wheel / up + down keys: zoom
 ### 4. Customise with user-set variables!
 This is only recommended if you want to customise the simulation a little bit.
 It doesn't require any coding skills.
-Variables are in `Planets_v11_2.pde`
+Variables are in `Planets_v11_3.pde`
 ##### If you do know coding:
 The user-set variables are just below the first multiline comment.
 They are fairly well documented.
